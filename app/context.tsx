@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 type ServerStyleContextData = {
   key: string;
@@ -6,14 +6,10 @@ type ServerStyleContextData = {
   css: string;
 };
 
-export const ServerStyleContext = createContext<
-  ServerStyleContextData[] | null
->(null);
+export const ServerStyleContext = createContext<ServerStyleContextData[] | null>(null);
 
 type ClientStyleContextData = {
   reset: () => void;
 };
 
-export const ClientStyleContext = createContext<ClientStyleContextData | null>(
-  null
-);
+export const ClientStyleContext = createContext<ClientStyleContextData | null>(null);
