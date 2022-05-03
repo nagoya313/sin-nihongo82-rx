@@ -15,7 +15,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "importsNotUsedAsValues": "error",
+    // "importsNotUsedAsValues": "error",
     "noPropertyAccessFromIndexSignature": true,
     "baseUrl": ".",
     "paths": {

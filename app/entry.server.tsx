@@ -2,16 +2,17 @@ import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
 import { type EntryContext } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
+import 'dotenv/config';
 import { renderToString } from 'react-dom/server';
-import { ServerStyleContext } from './context';
-import createEmotionCache from './createEmotionCache';
+import ServerStyleContext from '~/lib/contexts/ServerStyleContext';
+import createEmotionCache from '~/lib/createEmotionCache';
 
-export default function handleRequest(
+const handleRequest = (
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
-) {
+) => {
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
@@ -39,4 +40,6 @@ export default function handleRequest(
     status: responseStatusCode,
     headers: responseHeaders,
   });
-}
+};
+
+export default handleRequest;
